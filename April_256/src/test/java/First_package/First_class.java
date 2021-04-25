@@ -1,0 +1,32 @@
+package First_package;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class First_class {
+	@Test(priority=1,enabled=false)
+	public void m1() {
+		System.out.println("test1");
+	}
+	
+	@Test(priority=2,enabled=false)
+	public void m2() {
+		System.out.println("test2");
+	}
+	
+	@Test(priority=3,enabled=true)
+	public void m3() {
+		WebDriver driver;
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("start-maximized"); 
+		 driver=new ChromeDriver(options);
+		 driver.get("https://www.toolsqa.com/");
+		 driver.close();
+		
+	}
+}
